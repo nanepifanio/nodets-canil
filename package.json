@@ -10,7 +10,7 @@
     "tsc": "tsc",
     "start": "nodemon -e ts,json,mustache src/server.ts",
     "start-build": "node dist/server.js",
-    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/"
+    "postinstall": "npm run tsc && copyfiles -u 1 src/**/*.mustache dist/"
   },
   "repository": {
     "type": "git",

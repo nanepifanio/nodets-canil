@@ -7,7 +7,7 @@ export const home = (req: Request, res: Response) => {
     menu: createMenuObj('all'),
     banner: {
       title: 'Todos os animais',
-      background: 'allAnimals.jpg',
+      background: 'allanimals.jpg',
     },
     pets: Pet.getAllPets(),
   });

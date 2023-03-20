@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { createMenuObj } from '../helpers/createMenuObj';
+import { Pet } from '../models/Pet';
 
 export const home = (req: Request, res: Response) => {
   res.render('pages/page', {
@@ -8,6 +9,7 @@ export const home = (req: Request, res: Response) => {
       title: 'Todos os animais',
       background: 'allAnimals.jpg',
     },
+    pets: Pet.getAllPets(),
   });
 };
 
@@ -18,6 +20,7 @@ export const dogs = (req: Request, res: Response) => {
       title: 'Cachorros',
       background: 'banner_dog.jpg',
     },
+    pets: Pet.getFromType('dog'),
   });
 };
 
@@ -28,6 +31,7 @@ export const cats = (req: Request, res: Response) => {
       title: 'Gatos',
       background: 'banner_cat.jpg',
     },
+    pets: Pet.getFromType('cat'),
   });
 };
 
@@ -38,5 +42,6 @@ export const fishes = (req: Request, res: Response) => {
       title: 'Peixes',
       background: 'banner_fish.jpg',
     },
+    pets: Pet.getFromType('fish'),
   });
 };
